@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  share-net:
+    build: .
+    image: thelostlambda/share-net:latest
+    network_mode: "host"
+    environment:
+      link: enp34s0
+      wanlink: wlo1
+    privileged: true
+    cap_add:
+      - NET_ADMIN
