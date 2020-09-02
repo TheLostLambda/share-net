@@ -6,8 +6,8 @@ services:
     image: thelostlambda/share-net:latest
     network_mode: "host"
     environment:
-      link: enp0s31f6 
-      wanlink: wlp4s0
+      link: enp34s0
+      wanlink: wlo1
     privileged: true
     cap_add:
       - NET_ADMIN

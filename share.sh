@@ -15,7 +15,7 @@ iptables -I DOCKER-USER -i $link -j ACCEPT
 iptables -I DOCKER-USER -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 
 # Start dnsmasq for DHCP
-dnsmasq -d -i $link -F $client,$client,1m  &
+dnsmasq -d -i $link -F $client,$client,1m -O option:dns-server,1.1.1.1,1.0.0.1 &
 
 # Setup a trap to run cleanup before exiting
 function cleanup {
